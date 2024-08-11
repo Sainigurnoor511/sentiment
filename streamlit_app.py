@@ -1,4 +1,5 @@
 import streamlit as st
+from transformers import pipeline
 
 st.title("😊 😐 😠  Sentiment Analysis")
 st.title("Sentiment Analysis")
@@ -18,11 +19,3 @@ elif (specific_model(user_input)[0]['label']) == "NEG" :
     print("Negative")
 else :
     print("Error")
-
-
-if score == 0:
-    st.write(" ")
-elif score["neg"] != 0:
-    st.write("# Negative")
-elif score["pos"] != 0:
-    st.write("# Positive")
