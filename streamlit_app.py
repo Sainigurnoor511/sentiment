@@ -11,11 +11,13 @@ user_input = st.text_input("Please enter your review >>: ")
 specific_model = pipeline(model="finiteautomata/bertweet-base-sentiment-analysis")
 
 
-if (specific_model(user_input)[0]['label']) == "POS" :
-    st.write("# Positive")
+if (specific_model(user_input)[0]['label']) == 0:
+    st.write(" ")
+elif (specific_model(user_input)[0]['label']) == "POS" :
+    st.write("# 😊 Positive")
 elif (specific_model(user_input)[0]['label']) == "NEU" :
-    st.write("# Neutral")
+    st.write("# 😐 Neutral")
 elif (specific_model(user_input)[0]['label']) == "NEG" :
-    st.write("# Negative")
+    st.write("# 😠 Negative")
 else :
-    st.write("# Error")
+    st.write("# ☠️ Error ☠️")
