@@ -12,10 +12,10 @@ specific_model = pipeline(model="finiteautomata/bertweet-base-sentiment-analysis
 
 
 if (specific_model(user_input)[0]['label']) == "POS" :
-    print("Positive")
+    st.write("# Positive")
 elif (specific_model(user_input)[0]['label']) == "NEU" :
-    print("Neutral")
+    st.write("# Neutral")
 elif (specific_model(user_input)[0]['label']) == "NEG" :
-    print("Negative")
+    st.write("# Negative")
 else :
-    print("Error")
+    st.write("# Error")
